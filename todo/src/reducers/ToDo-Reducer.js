@@ -11,9 +11,14 @@ export const initialState = [
         id: 2
     },
     {
-        todo: 'Complete Redux project',
+        todo: 'Complete Redux Project',
         completed: false,
         id: 3
+    },
+    {
+        todo: 'Submit Redux Project',
+        completed: false,
+        id: 4
     }
 ]
 
@@ -23,7 +28,7 @@ export const todoReducer = (state, action) => {
             return [...state, action.payload]
         case 'TOGGLE_COMPLETED':
             return state.map((item) => {
-                return item.id === action.payload ? {...item, completed: !item.completed}: item
+                return item.id === action.payload ? {...item, completed: !item.completed} : item
             })
         case 'CLEAR_COMPLETED':
             return state.filter((item) => !item.completed)
